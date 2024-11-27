@@ -1,0 +1,39 @@
+/* Контейнер для кожного елемента списку */
+.todo-list li {
+    position: relative; /* Відносне позиціонування для елемента */
+    display: flex; /* Гарантуємо вирівнювання тексту */
+    align-items: center; /* Центрування по вертикалі */
+    margin-bottom: 10px; /* Відступ між задачами */
+    padding: 10px; /* Внутрішні відступи */
+    background-color: #4d4d4d; /* Фон елемента */
+    border-radius: 4px; /* Округлені кути */
+    color: white; /* Білий текст */
+    font-size: 16px; /* Розмір шрифту */
+}
+
+/* Текст задачі */
+.todo-list li span {
+    word-break: break-word; /* Переносить текст, якщо він довгий */
+    flex-grow: 1; /* Текст займає весь доступний простір */
+    margin-right: 50px; /* Простір для кнопки видалення */
+}
+
+/* Кнопка видалення */
+.todo-list li button.delete-button {
+    position: absolute; /* Абсолютне позиціонування */
+    right: 10px; /* Відступ від правого краю екрана */
+    top: 50%; /* Центрування по вертикалі */
+    transform: translateY(-50%); /* Вирівнювання по центру вертикалі */
+    background: #dc3545; /* Червоний фон */
+    color: #fff; /* Білий текст */
+    border: none; /* Без рамки */
+    border-radius: 4px; /* Округлені кути */
+    cursor: pointer; /* Вказівник миші */
+    padding: 5px 10px; /* Внутрішні відступи */
+    font-size: 14px; /* Розмір шрифту */
+}
+
+/* Ховер для кнопки видалення */
+.todo-list li button.delete-button:hover {
+    background: #b02a37; /* Темніший червоний на ховер */
+}

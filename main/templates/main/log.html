@@ -1,0 +1,28 @@
+{% load static %}
+{% block title %}{% endblock %}
+<link rel="icon" href="{% static 'main/favicon.ico' %}" />
+<link rel="stylesheet" href="{% static 'main/css/log.css' %}">
+<head>
+  <title>Вхід</title>
+  <link rel="stylesheet" href="{% static 'main/css/log.css' %}">
+</head>
+<body>
+    <div class="log">
+      <form action="">
+        <h1>Увійти</h1>
+        <div class="input-box">
+          <input type="text" placeholder="Логін" required>
+        </div>
+        <div class="input-box">
+          <input type="password" placeholder="Пароль" required>
+        </div>
+        <div class="remember-forgot">
+          <label><input type="checkbox">Запам'ятати мене</label>
+          <a href="a">Забули пароль?</a>
+        </div>
+        <button type="submit" class="btn">Войти</button>
+        <div class="register-link">
+          <p>У вас немає аккаунту?<a href="reg">Реєстрація</a></p>
+        </div>
+      </form>
+</body>

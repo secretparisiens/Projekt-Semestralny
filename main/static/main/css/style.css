@@ -1,0 +1,19 @@
+
+
+
+.skills {
+    float: left;
+    color: #fff;
+    margin-top: 100px;
+    text-align: center;
+    width: 75%;;
+}
+
+.skills h1, .skills h2 {
+    margin: 20px auto;
+}
+
+.skills table {
+    margin-left: 475px;
+    text-align: center;
+}

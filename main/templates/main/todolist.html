@@ -1,0 +1,26 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}Ту ду лист{% endblock %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+</head>
+<body>
+    <div class="todo-container">
+        <h1>to-do list</h1>
+<div class="todo-form">
+    <input id="taskInput" type="text">
+    <button id="addButton">Додати задачу</button>
+</div>
+
+<ul id="taskList" class="todo-list">
+</ul>
+
+    </div>
+    <link rel="stylesheet" href="{% static 'main/css/todolist.css' %}">
+    <script src="{% static 'main/js/todolist.js' %}"></script>
+</body>
+</html>
+ {% endblock %}
