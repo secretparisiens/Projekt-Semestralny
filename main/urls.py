@@ -17,8 +17,8 @@ urlpatterns = [
     path('edit-profile/', views.edit_profile, name='edit_profile'),
 
     # Регистрация и логин/логаут
-    path('reg', views.user_register, name='reg'),  # Обработчик регистрации
-    path('log', LoginView.as_view(template_name='main/log.html'), name='log'),  # Класс LoginView
+    path('log', LoginView.as_view(template_name='main/log.html'), name='log'),
+    path('reg', views.reg, name='reg'),
     path('logout', LogoutView.as_view(next_page='log'), name='logout'),  # Логаут
 ]
 
