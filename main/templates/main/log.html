@@ -25,4 +25,13 @@
           <p>У вас немає аккаунту?<a href="reg">Реєстрація</a></p>
         </div>
       </form>
+      <form method="post">
+    {% csrf_token %}
+    <label for="username">Имя пользователя:</label>
+    <input type="text" name="username" id="username">
+    <label for="password">Пароль:</label>
+    <input type="password" name="password" id="password">
+    <button type="submit">Войти</button>
+</form>
+
 </body>
