@@ -14,6 +14,7 @@ urlpatterns = [
     path('home', views.home, name='home'),
     path('acc', views.acc, name='acc'),
     path('acc/', views.profile, name='profile'),
+    path('edit-profile/', views.edit_profile, name='edit_profile'),
 
     # Регистрация и логин/логаут
     path('reg', views.user_register, name='reg'),  # Обработчик регистрации
