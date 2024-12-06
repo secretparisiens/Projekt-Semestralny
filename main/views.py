@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
-from django.http import HttpResponse
+from django.http import HttpResponse import login_required
+from .forms import ProfileForm
 
 # Функции для рендеринга статичных страниц
 def home(request):
@@ -24,6 +25,7 @@ def log(request):
 
 def acc(request):
     return render(request, 'main/acc.html')
+    
 
     @login_required
 def profile(request):
@@ -35,6 +37,19 @@ def profile(request):
         'about': user.profile.about if hasattr(user, 'profile') else 'Не указан',
     }
     return render(request, 'main/profile.html', context)
+    
+    @login_required
+def edit_profile(request):
+    profile = request.user.profile  # Получаем профиль текущего пользователя
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, instance=profile)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')  # Редирект на страницу профиля
+    else:
+        form = ProfileForm(instance=profile)
+    return render(request, 'main/edit_profile.html', {'form': form})
+
 
 # Функция для регистрации пользователя
 def user_register(request):
