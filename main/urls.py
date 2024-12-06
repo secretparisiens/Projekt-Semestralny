@@ -13,6 +13,7 @@ urlpatterns = [
     path('finance', views.finance, name='finance'),
     path('home', views.home, name='home'),
     path('acc', views.acc, name='acc'),
+    path('acc/', views.profile, name='profile'),
 
     # Регистрация и логин/логаут
     path('reg', views.user_register, name='reg'),  # Обработчик регистрации
