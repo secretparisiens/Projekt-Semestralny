@@ -15,4 +15,11 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
     instance.profile.save()
+    
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    phone = models.CharField(max_length=15, blank=True, null=True, verbose_name="Телефон")
+    about = models.TextField(blank=True, null=True, verbose_name="О себе")
 
+    def __str__(self):
+        return f"Профиль {self.user.username}"
