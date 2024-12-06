@@ -25,6 +25,17 @@ def log(request):
 def acc(request):
     return render(request, 'main/acc.html')
 
+    @login_required
+def profile(request):
+    user = request.user  # Получаем текущего авторизованного пользователя
+    context = {
+        'username': user.username,
+        'email': user.email,
+        'phone': user.profile.phone if hasattr(user, 'profile') else 'Не указан',
+        'about': user.profile.about if hasattr(user, 'profile') else 'Не указан',
+    }
+    return render(request, 'main/profile.html', context)
+
 # Функция для регистрации пользователя
 def user_register(request):
     if request.method == 'POST':
